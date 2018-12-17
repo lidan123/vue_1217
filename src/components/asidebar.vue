@@ -70,7 +70,7 @@ a {
   top: 0;
   background:rgba(52, 108, 158, 0.6);
   color: #fff;
-  width: 12%;
+  width: 18%;
   /* min-width: 200px; */
   left: 0;
 }

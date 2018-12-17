@@ -15,68 +15,17 @@
 import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
-import VRouter from 'vue-router'
+import router from './router'
 import Vuex from 'vuex'
 
 // 引用element-ui组件开始
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+
 // 引用element-ui组件结束
 
-import Vue1 from './views/vue1'
-import Vue2 from './views/vue2'
-import Vue3 from './views/vue3'
-import Login from './components/Login'
-import Register from './components/register'
-import Content from './components/content'
-
-Vue.use(VRouter)
 Vue.use(Vuex)
 Vue.use(ElementUI)
-
-// 实例化路由
-let router = new VRouter({
-  // mode: 'history',
-  // base: 'gas',
-  routes: [
-    {
-      path: '/',
-      redirect: 'Login'
-    },
-    {
-      path: '/Register',
-      meta: '注册',
-      component: Register
-    },
-     {
-      path: '/Login',
-      meta: '登录',
-      component: Login
-    },
-    {
-      path: '/Content',
-      meta: '登录',
-      component: Content,
-      children: [
-        {
-          path: '/Vue1',
-          meta: 'meta1页面标题',
-          component: Vue1
-        },
-         {
-          path: '/Vue2',
-          meta: 'meta2页面标题',
-          component: Vue2
-        },
-        {
-          path: '/Vue3',
-          meta: 'meta3页面标题',
-          component: Vue3
-        }
-      ]
-    }
-  ]
-})
 
 // 实例化vuex
 let store = new Vuex.Store({

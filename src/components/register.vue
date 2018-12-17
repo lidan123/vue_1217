@@ -24,7 +24,8 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button><router-link :to="{path:'/content'}">立即注册</router-link></el-button>
+          <!-- <el-button><router-link :to="{path:'/content'}">立即注册</router-link></el-button> -->
+          <el-button>立即注册</el-button>
         </el-form-item>
 
       </el-form>

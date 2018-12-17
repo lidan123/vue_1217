@@ -57,7 +57,7 @@ export default {
     onsubmit (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$router.push('/login')
+          this.$router.push({path: '/content'})
         } else {
           console.log('error submit!!');
           return false;

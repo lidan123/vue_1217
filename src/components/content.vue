@@ -4,6 +4,7 @@
     <vue-header></vue-header>
     <div class="content">
       <div class="container" :style="{'height':contentH+'px'}">
+        {{info}}
         <router-view></router-view>
       </div>
     </div>
@@ -13,14 +14,16 @@
 <script>
 import VueHeader from './vueheader'
 import AsideBar from './asidebar'
+import axios from 'axios'
 
 export default {
   components: {
-    VueHeader,AsideBar
+    VueHeader,AsideBar,axios
   },
   name: 'App',
     data () {
     return {
+      info: null,
       isLogin: false,
       contentH:300,
       calHeight:{
@@ -49,6 +52,8 @@ export default {
         this.contentH= h;
       })()
     }
+
+    axios.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(response =>(this.info = response))
   }
 }
 </script>
@@ -64,10 +69,10 @@ export default {
 }
 
 .content{
-    width:88%;
+    width:82%;
     position: fixed;
-    top: 52px;
-    left: 12%;
+    top: 46px;
+    left: 18%;
 }
 .content .container{
     background: #efefef;
