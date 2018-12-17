@@ -36,7 +36,8 @@ Vue.use(ElementUI)
 
 // 实例化路由
 let router = new VRouter({
-  mode: 'history',
+  // mode: 'history',
+  // base: 'gas',
   routes: [
     {
       path: '/',
