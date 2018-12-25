@@ -18,6 +18,13 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 
+import axios from 'axios';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+Vue.prototype.$axios = axios;
+
+Vue.prototype.HOME = '/api';
+Vue.config.productionTip = false
+
 // 引用element-ui组件开始
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
