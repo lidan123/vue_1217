@@ -51,15 +51,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
-.content{
-    width:88%;
-    position: fixed;
-    top: 52px;
-    left: 12%;
-}
-.content .container{
-    background: #efefef;
-    margin: 10px 6px 0 4px;
-}
 </style>

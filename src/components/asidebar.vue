@@ -1,10 +1,36 @@
 <template>
   <div class="aside">
-    <div class="aside-logo"></div>
+    <el-row class="tac">
+      <el-col >
+        <el-menu  v-for="item in ulList" :key="item.text"
+          default-active="2"
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+          @close="handleClose"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b">
+          <el-submenu index="1">
+            <template slot="title">
+              <!-- <span>{{item.text}}</span> -->
+              <router-link tag="div" :to="{path: item.url}"><i class="el-icon-location"></i> {{ item.text }}</router-link>
 
-    <ul class="aside-ul">
-      <router-link v-for="item in ulList" :key="item.text" tag="li" :to="{path: item.url}"><i class="el-icon-message"></i>{{ item.text }}</router-link>
-    </ul>
+            </template>
+            <!-- <el-menu-item-group>
+              <el-menu-item index="1-1">选项1</el-menu-item>
+              <el-menu-item index="1-2">选项2</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group>
+              <el-menu-item index="1-3">选项3</el-menu-item>
+            </el-menu-item-group>
+            <el-submenu index="1-4">
+              <template slot="title">选项4</template>
+              <el-menu-item index="1-4-1">选项1</el-menu-item>
+            </el-submenu> -->
+          </el-submenu>
+        </el-menu>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -16,23 +42,26 @@ export default {
       msg: 'I am asidebar',
       ulList:[
         {
-          text:'PAGE1',
-          url:"/vue1"
+          text:'接口测试',
+          url:"/apiTest"
         },
         {
-          text:'PAGE2',
-          url:"/vue2"
+          text:'表单练习',
+          url:"/formTest"
         },
         {
-          text:'PAGE3',
-          url:"/vue3"
+          text:'图表',
+          url:"/schart_echarts"
         }
       ]
     }
   },
   methods: {
-    navigator () {
-
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
     }
   }
 }
@@ -66,29 +95,15 @@ a {
 }
 
 .aside{
+  height: 100%;
   position: fixed;
   top: 0;
-  background:rgba(52, 108, 158, 0.6);
+  background:#545c64;
   color: #fff;
   width: 18%;
   /* min-width: 200px; */
   left: 0;
-}
-
-.aside-logo{
-  width: 100%;
-  /* 渐变色兼容 */
-  FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=1, startColorStr=#205f96, endColorStr=#2568a2); /*IE 6 7 8*/
-  background: -ms-linear-gradient(right, #205f96, #2568a2);        /* IE 10 */
-  background:-moz-linear-gradient(right, #205f96, #2568a2);/*火狐*/
-  /* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#AC07BD), to(#f140f8)); */
-  background: -webkit-linear-gradient(right, #205f96, #2568a2);   /*Safari5.1 Chrome 10+*/
-  background: -o-linear-gradient(right, #205f96, #2568a2);  /*Opera 11.10+*/
-  background: linear-gradient(to right,#205f96,#2568a2);
-  background: linear-gradient(to right, #205f96, #2568a2); /* Standard syntax; must be last */
-  background: linear-gradient(to right,#205f96,#2568a2);
-  /* 渐变色兼容 */
-  height: 52px;
+  top: 54px;
 }
 .aside-ul{
   margin: 0

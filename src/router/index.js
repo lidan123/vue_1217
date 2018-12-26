@@ -1,10 +1,12 @@
+/* eslint-disable indent */
+/* eslint-disable quotes */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import Vue from 'vue'
 import Router from 'vue-router'
-import Vue1 from '@/views/vue1'
-import Vue2 from '@/views/vue2'
-import Vue3 from '@/views/vue3'
+import apiTest from '@/views/apiTest'
+import formTest from '@/views/formTest'
+import echarts from '@/views/schart_echarts'
 import Login from '@/components/Login'
 import Register from '@/components/register'
 import Content from '@/components/content'
@@ -30,23 +32,48 @@ export default new Router({
   },
   {
     path: '/Content',
-    meta: '登录',
+    meta: '欢迎登录此系统！',
     component: Content,
     children: [{
-      path: '/Vue1',
-      meta: 'meta1页面标题',
-      component: Vue1
+      path: '/apiTest/',
+      meta: 'API接口调用测试',
+      component: apiTest
+      // children: [
+      //   {
+      //     path: '/Vue1/:color',
+      //     meta: 'meta1页面标题',
+      //     components: {
+      //       default: Vue1,
+      //       vue1: Vue1
+      //     }
+      //   },
+      //   {
+      //     path: '/Vue2',
+      //     meta: 'meta2页面标题',
+      //     components: {
+      //       default: Vue2,
+      //       vue2: Vue2
+      //     }
+      //   },
+      //   {
+      //     path: '/Vue3',
+      //     meta: 'meta3页面标题',
+      //     components: {
+      //       default: Vue3,
+      //       vue3: Vue3
+      //     }
+      //   }
+      // ]
     },
     {
-      path: '/Vue2',
-      meta: 'meta2页面标题',
-      component: Vue2
+      path: '/formTest',
+      meta: 'form表单测试',
+      component: formTest
     },
     {
-      path: '/Vue3',
-      meta: 'meta3页面标题',
-      component: Vue3
+      path: '/schart_echarts',
+      meta: '图表测试',
+      component: echarts
     }]
   }]
 })
-

@@ -1,3 +1,5 @@
+/* eslint-disable no-multi-spaces */
+/* eslint-disable spaced-comment */
 /* eslint-disable indent */
 /* eslint-disable import/first */
 /* eslint-disable space-unary-ops */
@@ -17,6 +19,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
+import echarts from 'echarts'
+import '@/assets/css/common.css'  //引入公共样式
 
 import axios from 'axios';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';

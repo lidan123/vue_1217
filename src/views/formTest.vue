@@ -1,9 +1,11 @@
 <template>
   <div class="content-box">
-    {{msg}}
-    {{$store.state.count}}
-    <button @click="add">+</button>
-    <button @click="minus">-</button>
+    <h1 class='content-wrap-brand'>111 > form表单练习</h1>
+    <div class='content-wrap-body'>
+      <div class='cont-container'>
+        <div class=''></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,18 +14,10 @@
 export default {
   components: {
   },
-  name: 'vue1',
+  name: 'vue2',
   data () {
     return {
-      msg: 'vue1加载到了！！！！'
-    }
-  },
-  methods: {
-    add () {
-      this.$store.commit('increment',5)
-    },
-    minus () {
-      this.$store.commit('decrease',5)
+      msg: 'vue2加载到了！！！！'
     }
   }
 }
